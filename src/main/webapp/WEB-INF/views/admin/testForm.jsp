@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
-    
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <%!
 	String action,member_id, pwd, readonly,nickname,email,pic,gender,joinDate, checked;	
 %>
@@ -11,7 +11,7 @@
 	
 	MemberDTO dto =(MemberDTO) request.getAttribute("memberDTO");
 	if(dto != null){
-		action = "/popcornpedia/admin/updateMember.do";
+		action = "/admin/updateMember.do";
 		member_id = "value=" +dto.getMember_id();
 		readonly = "readonly style='background-color:#dfdfdf;'";
 		nickname = "value="+dto.getNickname();
@@ -22,7 +22,7 @@
 		checked ="checked";
 	}
 	else{
-		action = "/popcornpedia/admin/insertMember.do";
+		action = "/admin/insertMember.do";
 		member_id = "";
 		pwd="";
 		readonly = "";
@@ -45,7 +45,7 @@
 <body>
 <%@ include file="../common/nav.jsp" %>
 <div class="container mt-5 mb-3">
-	<form method="post" action="<%=action %>">
+	<form method="post" action="${contextPath}<%=action %>">
 		<h3 align="center" style="margin-top:20px;">
 		<%if(dto == null){%>
 		회원 추가페이지
@@ -101,7 +101,7 @@
 		    </tr>
 		</table>
 	</form>
-	<br><h4 align="center"><a href="/popcornpedia/admin/listMember.do" class="btn btn-primary">전체 회원 조회</a></h4>
+	<br><h4 align="center"><a href="${contextPath}/admin/listMember.do" class="btn btn-primary">전체 회원 조회</a></h4>
 </div>
 
 <%@ include file="../common/footer.jsp" %>	

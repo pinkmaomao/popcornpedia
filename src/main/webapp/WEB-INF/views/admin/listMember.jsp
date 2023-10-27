@@ -38,9 +38,9 @@ function confirmDelete(event) {
 	</form>
 	<div class="mt-3 d-flex" style="justify-content: space-between;">
 		<div class="align-middle fst-italic mt-4">전체 회원수 : ${total }</div>
-		<div class="text-end mb-3">
-			<a href="/popcornpedia/admin/memberForm" class="btn btn-primary">회원 추가하기(관리자 테스트용)</a>
-		</div>
+		<!-- <div class="text-end mb-3">
+			<a href="${contextPath}/admin/memberForm" class="btn btn-primary">회원 추가하기(관리자 테스트용)</a>
+		</div> -->
 	</div>
 	<table border="1"  align="center"  width="90%" class="table table-border table-hover align-middle">
 	    <tr align="center" class="table-light">
@@ -48,7 +48,7 @@ function confirmDelete(event) {
 	      <td class="border"><b>닉네임</b></td>
 	      <td class="border"><b>이메일</b></td>
 	      <td class="border"><b>성별</b></td>
-	      <td class="border" style:height="100px"><b>멤버 이미지</b></td>
+	      <!-- <td class="border" style:height="100px"><b>멤버 이미지</b></td> -->
 	      <td class="border"><b>가입일</b></td>
 	      <td class="border"><b>관리</b></td>
 		</tr>   
@@ -62,10 +62,10 @@ function confirmDelete(event) {
 		      <c:if test="${member.gender eq 1}">여자</c:if>
 		      <c:if test="${member.gender eq 2}">선택안함</c:if>
 	      </td>
-	      <td class="border">
-	      	<c:if test="${not empty member.memberImgName }"><img src="/popcornpedia/resources/images/member/${member.memberImgName}"></c:if>
-	      	<c:if test="${empty member.memberImgName }"><img src="/popcornpedia/resources/images/common/default-profile.png" width="30px"></c:if>
-	      </td>
+	      <!-- <td class="border">
+	      	<c:if test="${not empty member.memberImgName}"><img src="${contextPath}/resources/images/member/${member.member_id}/${member.memberImgName}"></c:if>
+	      	<c:if test="${empty member.memberImgName}"><img src="${contextPath}/resources/images/common/default-profile.png" width="30px"></c:if>
+	      </td> -->
 	      <td class="border">${member.joinDate}</td>
 	      <td class="border">
 	      	<a href="${contextPath}/admin/updateMemberForm.do?member_id=${member.member_id }" class="btn btn-secondary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .85rem;">수정</a> 
