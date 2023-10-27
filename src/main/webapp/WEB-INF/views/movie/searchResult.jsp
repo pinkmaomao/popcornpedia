@@ -15,7 +15,7 @@
 	//키워드 클릭할 때 실행
 	function onButtonClicked(keyword) {
 			var currentUrl = window.location.href;  
-			var newUrl = "http://localhost:8080/popcornpedia/movie/movieSearch?keyword=" + encodeURIComponent(keyword) + "&page=1"; // 페이지 초기값 설정
+			var newUrl = "${contextPath}/movie/movieSearch?keyword=" + encodeURIComponent(keyword) + "&page=1"; // 페이지 초기값 설정
 			window.location.href = newUrl;
 	}
 	
@@ -24,7 +24,7 @@
 		var currentUrl = window.location.href;
 		var exKeyword = currentUrl.match(/keyword=([^&]*)/); //url에 있는 keyword 가져오기
 		var keyword = exKeyword ? decodeURIComponent(exKeyword[1]) : '';
-		var newUrl = "http://localhost:8080/popcornpedia/movie/movieSearch?keyword=" + encodeURIComponent(keyword) + "&page=" + page;
+		var newUrl = "${contextPath}/movie/movieSearch?keyword=" + encodeURIComponent(keyword) + "&page=" + page;
 		window.location.href = newUrl;
 		
 		var resultDiv = document.getElementById("resultText");
@@ -51,7 +51,7 @@
     function onYearSelected() {
         const yearSelect = document.getElementById("yearSelect");
         const selectedYear = yearSelect.value; // 선택한 연도 값 가져오기
-		var newUrl = "http://localhost:8080/popcornpedia/movie/movieSearch?keyword=" + encodeURIComponent(selectedYear) + "&page=1";
+		var newUrl = "${contextPath}/movie/movieSearch?keyword=" + encodeURIComponent(selectedYear) + "&page=1";
 		window.location.href = newUrl;
 		
 		yearSelect.value = selectedYear;
@@ -68,7 +68,7 @@
 <%@ include file="../common/nav.jsp" %>
 <div class="container mt-5 mb-3 px-4">
 	<h3 class="fw-bold text-center mb-4">팝콘피디아 영화 검색</h3>
-	<form method="get" action="/popcornpedia/movie/movieSearch" class="row gx-2 justify-content-center">
+	<form method="get" action="/movie/movieSearch" class="row gx-2 justify-content-center">
 		<div class="col-6">
 			<input type="text" name="keyword" placeholder="영화명 / 감독명 / 배우명" class="form-control form-control-lg" required>
 		</div>

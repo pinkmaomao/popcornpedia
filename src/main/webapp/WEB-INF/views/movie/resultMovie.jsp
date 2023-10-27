@@ -26,7 +26,7 @@ var result = JSON.parse('${result}');
 <%@ include file="../common/nav.jsp" %>
 <div class="searchWrap">
 	<h3 class="fw-bold text-center mb-4">Kobis 영화 검색</h3>
-	<form method="get" action="/popcornpedia/movie/searchResultKobis.do" class="row gx-2 justify-content-center">
+	<form method="get" action="/movie/searchResultKobis.do" class="row gx-2 justify-content-center">
 	<div class="col-6">
 		<input type="text" size="30" name="keyword" placeholder="영화 제목" class="form-control form-control-lg">
 	</div>
