@@ -4,7 +4,7 @@
 <!-- bootstrap -->
 <script src="<c:url value='/resources/js/bootstrap/bootstrap.bundle.min.js'/>"></script>
 <!-- jQuery -->
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <!-- slick -->
 <script src="<c:url value='/resources/js/slick/slick.min.js'/>"></script>
 <!-- font awesome -->

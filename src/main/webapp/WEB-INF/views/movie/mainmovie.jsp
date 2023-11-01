@@ -172,7 +172,7 @@ $(document).ready(function() {
 const posterImgs = document.querySelector('.rank-poster');
 const imgElements = posterImgs.querySelectorAll('img');
 const visualImg = document.getElementById('visual-img');
-const imgPath = 'http://image.tmdb.org/t/p/w200';
+const imgPath = '//image.tmdb.org/t/p/w200';
 let posterNames = [];
 
 // 비쥬얼메인 초기화
